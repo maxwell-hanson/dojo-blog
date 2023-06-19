@@ -140,7 +140,7 @@ const TestPage = () => {
       <div className="placeImageContainer">
         <br></br>
         <br></br>
-        <h1>LOCATION IMAGE HERE</h1>
+        <h1>LOCATION IMAGE HERE </h1>
         <SearchAutoComponent></SearchAutoComponent>
         <SearchAutoComponent />
       </div>
