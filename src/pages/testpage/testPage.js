@@ -99,7 +99,7 @@ const TestPage = () => {
           <h3>Weather App:</h3>
           <br></br>
           {/* SEARCH BAR */}
-           <SearchComponent
+          <SearchComponent
             onLocationChange={handleLocationChange}
             onTempChange={handleTempChange}
             onConditionsChange={handleCondtionsChange}
@@ -142,7 +142,7 @@ const TestPage = () => {
         <br></br>
         <h1>LOCATION IMAGE HERE</h1>
         <SearchAutoComponent></SearchAutoComponent>
-        <SearchAutoComponent/>
+        <SearchAutoComponent />
       </div>
     </div>
   );
