@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+/* base styles */
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
+}
+.navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
+}
+.navbar h1 {
+  color: #f1356d;
+}
+.navbar .links {
+  margin-left: auto;
+}
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+.navbar a:hover {
+  color: #f1356d;
+}
+.content {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.blog-preview {
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-bottom: 1px solid #fafafa;
+}
+
+.blog-preview:hover {
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.blog-preview h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 8px;
+}
+
+.blog-list {
+  font-size: 25px;
+}
+
+#delButtons {
+  background-color: rgb(218, 83, 110); /* Green */
+  border: none;
+  border-radius: 14px;
+  color: white;
+  padding: 3px 50px;
+  text-align: center;
+  font-size: 16px;
+}
+
+#delButtons:hover {
+  background-color: rgb(102, 7, 7);
+  /* silly shadows for the delete buttons  */
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.534);
+}
+
+.likeButtons {
+  background-color: rgb(120, 194, 219); /* Green */
+  border: none;
+  border-radius: 14px;
+  color: white;
+  padding: 3px 79px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.likeButtons:hover {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.534);
+  background-color: darkblue;
+}
+
+.gamesHeading{
+  text-align:center;
+}
+
+.tttGame{
+  text-align:center;
+}
+
+#refresh{
+  font-size: 10px;
+}
+
+.weatherContent{
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#weatherImage1{
+  display: block;
+  margin: 0 auto;
+}
+
+.container1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.locationText{
+  font-size: 25px;
+}
+
+.retLoc{
+  color:#f1356d
+}
+
+.placeImageContainer{
+  text-align: center;
+}
+
+.retTemp{
+  color:#f1356d;
+}
+
+.retConds{
+  color:#f1356d
+}
