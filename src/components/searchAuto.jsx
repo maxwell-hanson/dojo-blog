@@ -8,7 +8,7 @@ const placesAutoCompleteAPI = {
 
 const SearchAutoComponent = ({}) => {
   const [autoPlace, setAutoPlace] = useState("");
-
+  const [predictionList, setPredictionList] = useState([]);
   const handleAutoSearchChange = (event) => {
     setAutoPlace(event.target.value);
   };
@@ -29,7 +29,18 @@ const SearchAutoComponent = ({}) => {
       .then((result) => result.json())
       .then((result) => {
         console.log(result);
+
+        for (const predicts of result.predictions) {
+          console.log(predicts.description);
+        }
+
+        handleSuggestionsChange(result.predictions);
+        // setPredictionList(predictions);
       });
+  };
+
+  const handleSuggestionsChange = (newSuggestions) => {
+    setPredictionList(newSuggestions);
   };
 
   return (
@@ -42,6 +53,16 @@ const SearchAutoComponent = ({}) => {
         onKeyUp={handleEnterKey}
       />
       <button onClick={getPlacesAutoComplete}>Search by City Name</button>
+      <br></br>
+      {/* <p>Results: {predictionList.toString()}</p> */}
+      <p>Predictions:</p>
+      <ul>
+        {predictionList.map((prediction, index) => (
+          <li key={index}>{prediction.description}</li>
+        ))}
+      </ul>
+
+      <br></br>
     </div>
   );
 };

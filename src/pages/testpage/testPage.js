@@ -71,6 +71,7 @@ const TestPage = () => {
       </div>
     );
   };
+
   const [conditions, setConditions] = useState("");
   const handleCondtionsChange = (newConditions) => {
     setConditions(newConditions);
@@ -85,6 +86,10 @@ const TestPage = () => {
   const handleLocationChange = (newLoc) => {
     setLocation(newLoc);
   };
+
+  
+
+  //ARRAY FROM searchauto containing objects
 
   return (
     <div className="TestPage">
@@ -141,7 +146,6 @@ const TestPage = () => {
         <br></br>
         <br></br>
         <h1>LOCATION IMAGE HERE </h1>
-        <SearchAutoComponent></SearchAutoComponent>
         <SearchAutoComponent />
       </div>
     </div>
