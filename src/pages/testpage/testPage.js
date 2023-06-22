@@ -152,3 +152,6 @@ export default TestPage;
 
 //IDEA , USING SWITCH OR IF ELSE STATEments, let's have a collection
 //of images that change appropriately based on the conditions
+
+
+//pushed to all
