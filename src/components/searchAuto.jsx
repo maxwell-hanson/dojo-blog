@@ -9,13 +9,22 @@ const placesAutoCompleteAPI = {
 };
 
 const SearchAutoComponent = ({}) => {
-
   const [autoPlace, setAutoPlace] = useState("");
   const [predictionList, setPredictionList] = useState([]);
   const [selectedID, setSelectedID] = useState("");
 
-  const handleSelectID = (place_id) =>{
-    setSelectedID(place_id);
+  const handleSelectID = (predicitonObj) => {
+    setSelectedID(predicitonObj.place_id);
+    // Below 2 lines
+    const newPredictionList = [predicitonObj];
+    setPredictionList(newPredictionList);
+
+    console.log(
+      "User selected ID: " +
+        predicitonObj.place_id +
+        " for the city of: " +
+        predicitonObj.description
+    );
   };
 
   const handleAutoSearchChange = (event) => {
@@ -33,10 +42,6 @@ const SearchAutoComponent = ({}) => {
   };
 
   const idArray = [];
-
-  // const handleDescriptionClick = (place_id) =>{
-  //   console.log("User selected place: " + place_id);
-  // }
 
   const getPlacesAutoComplete = () => {
     console.log(autoPlace);
@@ -75,7 +80,9 @@ const SearchAutoComponent = ({}) => {
       <ul>
         {predictionList.map((prediction, index) => (
           <li key={index}>
-            <a href="#" onClick={handleSuggestionsChange}>{prediction.description}</a>
+            <a href="#" onClick={() => handleSelectID(prediction)}>
+              {prediction.description}
+            </a>
           </li>
         ))}
       </ul>
