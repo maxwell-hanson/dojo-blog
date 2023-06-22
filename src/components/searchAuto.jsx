@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import PlaceDescriptions from "./placeDescriptions";
 
 const placesAutoCompleteAPI = {
   base: "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/autocomplete/json?",
@@ -7,8 +9,15 @@ const placesAutoCompleteAPI = {
 };
 
 const SearchAutoComponent = ({}) => {
+
   const [autoPlace, setAutoPlace] = useState("");
   const [predictionList, setPredictionList] = useState([]);
+  const [selectedID, setSelectedID] = useState("");
+
+  const handleSelectID = (place_id) =>{
+    setSelectedID(place_id);
+  };
+
   const handleAutoSearchChange = (event) => {
     setAutoPlace(event.target.value);
   };
@@ -18,6 +27,16 @@ const SearchAutoComponent = ({}) => {
       getPlacesAutoComplete();
     }
   };
+
+  const handleSuggestionsChange = (newSuggestions) => {
+    setPredictionList(newSuggestions);
+  };
+
+  const idArray = [];
+
+  // const handleDescriptionClick = (place_id) =>{
+  //   console.log("User selected place: " + place_id);
+  // }
 
   const getPlacesAutoComplete = () => {
     console.log(autoPlace);
@@ -32,15 +51,12 @@ const SearchAutoComponent = ({}) => {
 
         for (const predicts of result.predictions) {
           console.log(predicts.description);
+          idArray.push(predicts.place_id);
         }
 
         handleSuggestionsChange(result.predictions);
-        // setPredictionList(predictions);
+        console.log(idArray);
       });
-  };
-
-  const handleSuggestionsChange = (newSuggestions) => {
-    setPredictionList(newSuggestions);
   };
 
   return (
@@ -54,11 +70,13 @@ const SearchAutoComponent = ({}) => {
       />
       <button onClick={getPlacesAutoComplete}>Search by City Name</button>
       <br></br>
-      {/* <p>Results: {predictionList.toString()}</p> */}
-      <p>Predictions:</p>
+
+      <p>Predictions2:</p>
       <ul>
         {predictionList.map((prediction, index) => (
-          <li key={index}>{prediction.description}</li>
+          <li key={index}>
+            <a href="#" onClick={handleSuggestionsChange}>{prediction.description}</a>
+          </li>
         ))}
       </ul>
 

@@ -8,8 +8,7 @@ import Games from "./pages/games/games";
 import TestPage from "./pages/testpage/testPage";
 
 function App() {
-  const title = "welcome to my blog";
-  const link1 = "https://weather.com/";
+ 
 
   return (
     <div className="App">
@@ -22,8 +21,7 @@ function App() {
           <Route path="/blog" element={<Blog />}></Route>
           <Route path="/games" element={<Games />}></Route>
           <Route path="/testpage" element={<TestPage/>}></Route>
-            {" "}
-          
+
         </Routes>
       </Router>
     </div>
