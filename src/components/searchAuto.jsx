@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import GetPhotos from "./GetPhotos";
 
 const placesAutoCompleteAPI = {
   base: "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/autocomplete/json?",
@@ -20,13 +20,14 @@ const SearchAutoComponent = ({}) => {
 
     console.log(
       "User selected ID: " +
-        predicitonObj.place_id +
+        selectedID +
         " for the city of: " +
         predicitonObj.description
     );
+    
   };
 
-  const handleAutoSearchChange = (event) => {
+    const handleAutoSearchChange = (event) => {
     setAutoPlace(event.target.value);
   };
 
@@ -87,11 +88,11 @@ const SearchAutoComponent = ({}) => {
       </ul>
 
       <br></br>
+      <GetPhotos placeID={selectedID}/>
     </div>
   );
 };
 
 export default SearchAutoComponent;
-
 
 //saving stuff
