@@ -11,23 +11,25 @@ const SearchAutoComponent = ({}) => {
   const [autoPlace, setAutoPlace] = useState("");
   const [predictionList, setPredictionList] = useState([]);
   const [selectedID, setSelectedID] = useState("");
+  const [userClickedPlace, setUserClickedPlace] = useState(false);
+
+  // let userClickedPlace = false;
 
   const handleSelectID = (predicitonObj) => {
+    setUserClickedPlace(true);
     setSelectedID(predicitonObj.place_id);
     // Below 2 lines
     const newPredictionList = [predicitonObj];
     setPredictionList(newPredictionList);
-
     console.log(
       "User selected ID: " +
-        selectedID +
+      predicitonObj.place_id +
         " for the city of: " +
         predicitonObj.description
     );
-    
   };
 
-    const handleAutoSearchChange = (event) => {
+  const handleAutoSearchChange = (event) => {
     setAutoPlace(event.target.value);
   };
 
@@ -75,8 +77,7 @@ const SearchAutoComponent = ({}) => {
       />
       <button onClick={getPlacesAutoComplete}>Search by City Name</button>
       <br></br>
-
-      <p>Predictions2:</p>
+      <p>Predictions:</p>
       <ul>
         {predictionList.map((prediction, index) => (
           <li key={index}>
@@ -86,9 +87,8 @@ const SearchAutoComponent = ({}) => {
           </li>
         ))}
       </ul>
-
       <br></br>
-      <GetPhotos placeID={selectedID}/>
+      <GetPhotos placeID={selectedID} userClickedPlace={userClickedPlace} />
     </div>
   );
 };

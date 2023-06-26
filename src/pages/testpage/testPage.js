@@ -87,8 +87,6 @@ const TestPage = () => {
     setLocation(newLoc);
   };
 
-  
-
   //ARRAY FROM searchauto containing objects
 
   return (
