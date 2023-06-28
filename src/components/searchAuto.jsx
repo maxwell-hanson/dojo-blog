@@ -1,13 +1,13 @@
 import React from "react";
 import { useState } from "react";
-import GetPhotos from "./GetPhotos";
+import GetPlaceIDs from "./GetPlaceIDs";
 
 const placesAutoCompleteAPI = {
   base: "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/autocomplete/json?",
   key: "AIzaSyA-ZQxK_Ewv79maROwoMONM5X2RykvAObA",
 };
 
-const SearchAutoComponent = ({}) => {
+const SearchAutoComponent = () => {
   const [autoPlace, setAutoPlace] = useState("");
   const [predictionList, setPredictionList] = useState([]);
   const [selectedID, setSelectedID] = useState("");
@@ -23,7 +23,7 @@ const SearchAutoComponent = ({}) => {
     setPredictionList(newPredictionList);
     console.log(
       "User selected ID: " +
-      predicitonObj.place_id +
+        predicitonObj.place_id +
         " for the city of: " +
         predicitonObj.description
     );
@@ -88,7 +88,7 @@ const SearchAutoComponent = ({}) => {
         ))}
       </ul>
       <br></br>
-      <GetPhotos placeID={selectedID} userClickedPlace={userClickedPlace} />
+      <GetPlaceIDs placeID={selectedID} userClickedPlace={userClickedPlace} />
     </div>
   );
 };
