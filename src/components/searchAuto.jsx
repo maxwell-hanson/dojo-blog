@@ -13,7 +13,6 @@ const SearchAutoComponent = () => {
   const [selectedID, setSelectedID] = useState("");
   const [userClickedPlace, setUserClickedPlace] = useState(false);
 
-  // let userClickedPlace = false;
 
   const handleSelectID = (predicitonObj) => {
     setUserClickedPlace(true);
