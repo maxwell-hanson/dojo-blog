@@ -39,8 +39,6 @@ const GetPlaceIDs = ({ placeID, userClickedPlace }) => {
     for (const photoObjects of array) {
       photoArray.push(photoObjects.photo_reference);
     }
-    // console.log(photoArray);
-    // photoID1=photoArray[0];
     setPicID(photoArray[0]);
     console.log(picID);
     console.log(photoArray[0]);
@@ -76,3 +74,4 @@ export default GetPlaceIDs;
 const handleShowFirstPic = (picID) => {
   console.log(picID);
 };
+

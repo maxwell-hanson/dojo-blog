@@ -76,7 +76,8 @@ const SearchAutoComponent = () => {
       />
       <button onClick={getPlacesAutoComplete}>Search by City Name</button>
       <br></br>
-      <p>Predictions:</p>
+      <br/>
+      <p>Select your desired location:</p>
       <ul>
         {predictionList.map((prediction, index) => (
           <li key={index}>
