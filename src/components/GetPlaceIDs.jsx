@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import GetPhotos from "./GetPhotos";
+import GetPhotosFromArray from "./GetPhotosFromArray";
 
 let photoArray = [];
 let photoObjArray = [];
@@ -14,6 +15,7 @@ const placeDetailsAPI = {
 const GetPlaceIDs = ({ placeID, userClickedPlace }) => {
   const [picID, setPicID] = useState("");
   const [requestedPics, setRequestedPics] = useState(false);
+  const [refArray, setRefArray] = useState([]);
 
   const handlePicVisibility = () => {
     setRequestedPics(true);
@@ -42,6 +44,7 @@ const GetPlaceIDs = ({ placeID, userClickedPlace }) => {
     setPicID(photoArray[0]);
     console.log(picID);
     console.log(photoArray[0]);
+    setRefArray(photoArray);
   };
 
   placeDetailsAPI.place = placeID;
@@ -65,6 +68,7 @@ const GetPlaceIDs = ({ placeID, userClickedPlace }) => {
     <div>
       <p>{photoButton}</p>
       {requestedPics && <GetPhotos photoID1={picID} />}
+      {requestedPics && <GetPhotosFromArray referenceIDArray={refArray}/>}
     </div>
   );
 };
@@ -74,4 +78,3 @@ export default GetPlaceIDs;
 const handleShowFirstPic = (picID) => {
   console.log(picID);
 };
-
