@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from '@storybook/react';
 
-import Light from './Light.jsx';
+import Light from './Light.tsx';
 
  const meta: Meta<typeof Light> ={
     component: Light,
